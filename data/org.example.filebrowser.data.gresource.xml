@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/org/example/filebrowser">
+		<file>ui/WelcomeWidget1.ui</file>
+		<file>ui/Window.ui</file>
+		<file>css/style.css</file>
+		<file>ui/FilesView.ui</file>
+		<file>ui/FileListItem.ui</file>
+		<file>ui/CommandItem.ui</file>
+
+	</gresource>
+	<gresource prefix="/org/example/filebrowser/icons/scalable/actions">
+	<file alias="filebrowser-welcome-symbolic.svg">icons/welcome-symbolic.svg</file>
+	<file alias="command-line.png">icons/command-line.png</file>
+</gresource>
+
+</gresources>

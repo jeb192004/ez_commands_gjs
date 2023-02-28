@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+	<gresource prefix="/org/example/filebrowser/js">
+		<file>main.js</file>
+		<file>Application.js</file>
+		<file>WelcomeWidget.js</file>
+		<file>Window.js</file>
+		<file>FilesView.js</file>
+		<file>File.js</file>
+		<file>CommandItem.js</file>
+	</gresource>
+</gresources>

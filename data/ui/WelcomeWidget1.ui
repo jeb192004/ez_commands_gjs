@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<template class="FbrWelcomeWidget">
+		<property name="layout-manager">
+			<object class="GtkBoxLayout">
+				<property name="orientation">vertical</property>
+			</object>
+		</property>
+		<child>
+			<object class="GtkImage">
+				<property name="icon-name">command-line</property>
+				<property name="icon-size">large</property>
+			</object>
+		</child>
+	  
+		<child>
+			<object class="GtkLabel">
+				<property name="label" >Add your own commands using the button below!</property>
+				<property name="wrap">true</property>
+				<property name="justify">center</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkLabel" id="git_info">
+				<property name="label">When adding Git commands, you only need to add 1 (clone, push, or pull) and this will create all 3 for you.  There is no need to create a command for each one.</property>
+				<property name="wrap">true</property>				
+				<property name="justify">left</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkEntry" id="command_name" >
+			</object>
+		</child>
+		<child>
+			<object class="GtkEntry" id="command_entry">
+			</object>
+		</child>
+		<child>
+			<object class="GtkButton">
+				<style>
+					<class name="suggested-action" />
+				</style>
+				<property name="label">Temp Button(Placeholder)!</property>
+				<property name="halign">center</property>
+				<property name="action-name">win.add-command</property>
+				<property name="action-target">'files'</property>
+			</object>
+		</child>
+		<child>
+			<object class="GtkButton">
+				<style>
+					<class name="suggested-action" />
+				</style>
+				<property name="label">Add New Command!</property>
+				<property name="halign">center</property>
+				<signal name="clicked" handler="onButtonClicked" />
+			</object>
+		</child>
+		
+		<child>
+			<object class="GtkScrolledWindow">
+				<property name="vexpand">true</property>
+				<property name="propagate_natural_height">true</property>
+				<property name="child">
+					<object class="GtkBox" id="commmand_list_container">
+					<property name="orientation">vertical</property>
+					<property name="vexpand">true</property>
+					</object>
+				</property>
+			</object>
+		</child>
+
+		
+	</template>
+</interface>
+

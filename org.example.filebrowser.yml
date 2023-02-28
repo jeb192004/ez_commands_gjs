@@ -1,0 +1,28 @@
+app-id: org.example.filebrowser
+runtime: org.gnome.Platform
+runtime-version: '43'
+sdk: org.gnome.Sdk
+command: org.example.filebrowser
+
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+  - --filesystem=home:ro
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
+  - '*.a'
+  - '*.la'
+
+modules:
+
+  - name: filebrowser
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .

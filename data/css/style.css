@@ -1,0 +1,16 @@
+
+
+welcome {
+	border-spacing: 18px;
+	margin: 36px;
+}
+
+welcome.big > label {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+welcome.big > #git_info{
+    font-size: 0.4em;
+    font-weight: normal;
+}

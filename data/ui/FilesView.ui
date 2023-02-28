@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<template class="FbrFilesView">
+		<property name="layout-manager">
+			<object class="GtkBoxLayout">
+				<property name="orientation">vertical</property>
+			</object>
+		</property>
+		<child>
+			<object class="GtkCheckButton">
+				<property name="label">Show hidden files</property>
+				<signal name="toggled" handler="onShowHiddenFilesButtonToggled"/>
+			</object>
+		</child>
+		<child>
+			<object class="GtkScrolledWindow">
+				<property name="vexpand">true</property>
+				<property name="child">
+					<object class="GtkListView">
+						<property name="enable-rubberband">true</property>
+						<property name="model">
+							<object class="GtkMultiSelection">
+								<property name="model">
+									<object class="GtkFilterListModel" id="hiddenFileFilterModel">
+										<property name="model">
+											<object class="GtkSortListModel">
+												<property name="model" bind-source="FbrFilesView" bind-property="files"/>
+												<property name="sorter">
+													<object class="GtkStringSorter">
+														<property name="expression">
+															<lookup name="name" type="FbrFile"/>
+														</property>
+													</object>
+												</property>
+											</object>
+										</property>
+									</object>
+								</property>
+								<signal name="selection-changed" handler="onSelectionChanged"/>
+							</object>
+						</property>
+						<property name="factory">
+							<object class="GtkBuilderListItemFactory">
+								<property name="resource">/org/example/filebrowser/ui/FileListItem.ui</property>
+							</object>
+						</property>
+						<signal name="activate" handler="onListViewActivated"/>
+					</object>
+				</property>
+			</object>
+		</child>
+	</template>
+</interface>

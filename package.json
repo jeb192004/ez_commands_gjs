@@ -1,0 +1,19 @@
+{
+  "name": "ez_commands",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "James Burnison",
+  "license": "MIT",
+  "scripts": {
+    "start": "mesan compile -C _build devel",
+    "test": "flatpak run org.flatpak.Builder --force-clean --user --install build-dir org.example.filebrowser.yml && flatpak run org.example.filebrowser"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "react-copy-to-clipboard": "^5.1.0"
+  }
+}
